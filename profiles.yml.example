@@ -1,0 +1,13 @@
+kimball_retail:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: your-gcp-project-id
+      dataset: analytics
+      threads: 4
+      keyfile: /path/to/your/service-account-key.json
+      location: US
+      job_execution_timeout_seconds: 300
+      job_retries: 1
