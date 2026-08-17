@@ -35,6 +35,10 @@ models:
           - not_null
 
   - name: fct_order_items
+    tests:
+      - dbt_expectations.expect_table_row_count_to_be_between:
+          min_value: 100000
+          max_value: 200000
     columns:
       - name: order_item_key
         tests:
@@ -64,3 +68,13 @@ models:
           - relationships:
               to: ref('date_dim')
               field: date_key
+      - name: price
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
+      - name: freight_value
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: false
