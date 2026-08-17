@@ -164,10 +164,4 @@ dbt snapshot
 
 ---
 
-## What's next
 
-- **Second product source.** Add an acquired company's product catalogue with conflicting IDs and category names. Forces a real conforming decision and makes the surrogate key design non-trivial.
-- **Accumulating snapshot.** Olist has five order timestamps (`purchase`, `approved`, `carrier`, `delivered`, `estimated`). A second fact table at order grain would show pipeline lag metrics.
-- **Dashboard.** Connect Looker Studio or Metabase to `analytics` for interactive revenue by category, repeat customer analysis, and delivery time distributions.
-- **Enable billing.** Unlocks DML and allows live SCD Type 2 demonstration.
-- **Canonical city lookup.** A seed CSV mapping raw seller city strings to canonical names, joined in `stg_sellers`.
